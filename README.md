@@ -62,4 +62,4 @@ Create a Java web application for two types of users (clients and sellers).
  * "offer" with the following fields:(id | comentario | data_da_entrega | valor | pedido_id)
  * "users" with the following fields:(username | password | enabled)
 
-<img src="https://user-images.githubusercontent.com/61911750/147610586-2b52849e-d804-4e0c-be0d-b59c78068f94.png" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/61911750/147610586-2b52849e-d804-4e0c-be0d-b59c78068f94.png" width="500" height="400" />
