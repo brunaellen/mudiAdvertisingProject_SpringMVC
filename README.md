@@ -68,5 +68,5 @@ Create a Java web application for two types of users (clients and sellers).
 <img src="https://user-images.githubusercontent.com/61911750/147610586-2b52849e-d804-4e0c-be0d-b59c78068f94.png" width="450" height="450" />
 
  ## Diagram of the application:
-<img src="https://user-images.githubusercontent.com/61911750/147612119-79624594-a79b-46fe-8673-f12b466a5f2d.png" />
+<img src="https://user-images.githubusercontent.com/61911750/147612119-79624594-a79b-46fe-8673-f12b466a5f2d.png" width="650" height="650"/>
 
