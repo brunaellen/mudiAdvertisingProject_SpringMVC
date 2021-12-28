@@ -1,4 +1,4 @@
-# mudiAdvertisingProject_SpringMVC
+# mudiAdvertising Project
 # Project developed during the course (Spring MVC: create a web app using Thymeleaf and Bootstrap).
 
 ## The project was developed to learn and put into practice: 
