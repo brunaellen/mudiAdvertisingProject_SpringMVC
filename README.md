@@ -61,7 +61,5 @@ Create a Java web application for two types of users (clients and sellers).
  * "authorities" with the following fields:(username | authority)
  * "oferta" with the following fields:(id | comentario | data_da_entrega | valor | pedido_id)
  * "users" with the following fields:(username | password | enabled)
- 
- 
- 
- * The database used was the MariaDB.
+
+![image](https://user-images.githubusercontent.com/61911750/147610586-2b52849e-d804-4e0c-be0d-b59c78068f94.png)
