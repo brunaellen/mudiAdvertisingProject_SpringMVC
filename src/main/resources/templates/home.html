@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head th:replace="~{base :: head}"></head>
+
+<body>
+  <div th:replace="~{base :: logo}"></div>
+
+  <div class="container">
+    <div th:replace="~{base :: title('Orders Successfully Delivered')}"></div>
+
+    <!-- card order -->
+    <div class="card mb-3 mt-3" th:each="order : ${orders}">
+      <div class="card-header alert-dark"
+        th:text="${order.nameOfProduct}">Name of Product</div>
+
+      <div class="card-body">
+        <div class="row">
+          <div class="col-12 col-sm-8 mb-3">
+            <div class="row">
+              <div class="col-md-5">
+                Value: <span th:if="${order.value} != null"
+                  th:text="${'€ ' + #numbers.formatDecimal(order.value,3,2,'COMMA')}">200,99</span>
+              </div>
+              <div class="col-md-7">
+                Date of delivery: <span
+                  th:text="${#temporals.format(order.dateOfDelivery, 'dd/MM/yyyy')}">10/02/2020</span>
+              </div>
+            </div>
+
+            <div>Product</div>
+            <div>
+              <input class="form-control mb-3"
+                th:value="${order.urlOfProduct}" value="url Of Product" />
+            </div>
+
+            <div>Description</div>
+            <div>
+              <textarea class="form-control mb-3" th:text="${order.description}"> Description of product</textarea>
+            </div>
+          </div>
+
+          <div class="col-12 col-sm-4">
+            <div>
+              <img class="img-thumbnail" th:src="${order.urlOfImage}"/>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

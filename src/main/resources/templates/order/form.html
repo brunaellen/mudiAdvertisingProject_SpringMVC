@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+  <head th:replace="~{base :: head}"></head>
+  
+  <body>
+    <div th:replace="~{base :: logo}"></div>
+    <div class="container">
+          
+      <!-- title of form page -->
+      <div th:replace="~{base :: title('New Order')}"></div>
+      
+      <!-- form of order -->
+      <div class="card mt-3">
+        <form th:action="@{/order/new}" th:object="${newOrder}" class="card-body" method="POST">
+          <div class="alert alert-danger" role="alert" th:if="${#fields.hasAnyErrors()}">
+            There was an error during the request processing. Please check messages for details.
+          </div>
+          <div class="form-group">
+            <label for="nameOfProduct">Product</label>
+            <input th:field="*{nameOfProduct}" th:errorclass="is-invalid" class="form-control" placeholder="name of product"/>
+            <small>Insert name of product</small>
+            <div class="invalid-feedback" th:errors="*{nameOfProduct}">
+              Error in product name
+            </div>
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="urlOfProduct">Url</label>
+            <input th:field="*{urlOfProduct}" th:errorclass="is-invalid" class="form-control" placeholder="url of product"/>
+            <small>Insert an url illustrating the product you want to purchase</small>
+            <div class="invalid-feedback" th:errors="*{urlOfProduct}">
+             Error in url of product
+            </div>
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="urlOfImage">Image</label>
+            <input th:field="*{urlOfImage}" th:errorclass="is-invalid" class="form-control" placeholder="url of image"/>
+            <small>Search for a good image illustrating the product you want to purchase and insert the 
+              url image here to help other users to make an offer</small>
+            <div class="invalid-feedback" th:errors="*{urlOfImage}">
+               Error in url of image
+            </div>
+          </div>
+          
+          <div class="form-group mt-3">
+            <label for="description">description</label>
+            <textarea th:field="*{description}" class="form-control" placeholder="Add important details about your product"></textarea>    
+          </div>
+          
+          <button class="btn btn-primary mt-3" type="submit">Register</button>
+        </form>
+      </div>
+      
+    </div>
+  </body>
+  
+</html>

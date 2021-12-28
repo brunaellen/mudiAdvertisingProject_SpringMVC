@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+  <head th:replace="~{base :: head}"></head>
+  
+  <body>
+    <div th:replace="~{base :: logo}"></div>
+
+    <div class="container"> 
+      
+      <div class="alert alert-success" role="alert" th:if="${(param.success != null) and (param.success[0] == 'true')}">
+        Order created successfully!
+      </div>
+      
+      <div th:replace="~{base :: title('My Orders')}"></div>
+      
+      <!-- menu orders -->
+      <nav class="navbar navbar-expand navbar-light bg-light d-flex justify-content-between mb-3">
+        <div class="navbar-nav">
+          <a th:classappend="${status} == null ? 'active'" class="nav-link" th:href="@{/user/order}">All</a>
+          <a th:classappend="${status} == 'pending' ? 'active'" class="nav-link" th:href="@{/user/order/pending}">Pending</a>
+          <a th:classappend="${status} == 'approved' ? 'active'" class="nav-link" th:href="@{/user/order/approved}">Approved</a>
+          <a th:classappend="${status} == 'delivered' ? 'active'" class="nav-link" th:href="@{/user/order/delivered}">Delivered</a>
+        </div>
+        <a href="/order/form"><button class="btn btn-outline-secondary my-2 my-sm-0 m-3">New Order</button></a>
+      </nav>
+      
+      <!-- card order -->
+      <div class="card mb-3" th:each="order : ${orders}">
+      
+        <th:block th:switch="${order.status.name()}">
+          <div th:case="'PENDING'" class="card-header alert-warning" th:text="${order.nameOfProduct}">Name of product</div>
+          <div th:case="'APPROVED'" class="card-header alert-success" th:text="${order.nameOfProduct}">Name of product</div>
+          <div th:case="'DELIVERED'" class="card-header alert-dark" th:text="${order.nameOfProduct}">Name of product</div>
+        </th:block>
+        
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 col-sm-8 mb-3">
+              <div class="row">
+                <div class="col-md-5"> Value: <span th:if="${order.value} != null" th:text="${'R$ ' + #numbers.formatDecimal(order.value,3,2,'COMMA')}">200,99</span></div>
+                <div class="col-md-7"> Date of Delivery: <span th:text="${#temporals.format(order.dateOfDelivery, 'dd/MM/yyyy')}">10/02/2020</span></div>
+              </div>
+              
+              <div>Product</div>
+              <div><input class="form-control mb-3" th:value="${order.urlOfProduct}" value="url of product"/></div>
+              
+              <div>Description</div>
+              <div><textarea class="form-control mb-3" th:text="${order.description}"> Description of order</textarea></div>
+            </div>
+            
+            <div class="col-12 col-sm-4">
+              <div>
+                <img class="img-thumbnail" th:src="${order.urlOfImage}" src=""/>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div> 
+    </div>  
+  </body>
+  
+</html>
