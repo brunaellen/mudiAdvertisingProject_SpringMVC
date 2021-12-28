@@ -33,7 +33,7 @@ Create a Java web application for two types of users (clients and sellers).
 
 
 &nbsp;&nbsp;
-# The second part of this project (part-2 branch) was created during the course (Spring MVC: Authentication with Spring Security, Rest API and AJAX).
+# The second part of this project was created during the course (Spring MVC: Authentication with Spring Security, Rest API and AJAX).
 
 ## The project was developed to learn and put into practice:
 
