@@ -59,7 +59,7 @@ Create a Java web application for two types of users (clients and sellers).
  Currently, in the database was added the following  entities:
 
  * "authorities" with the following fields:(username | authority)
- * "oferta" with the following fields:(id | comentario | data_da_entrega | valor | pedido_id)
+ * "offer" with the following fields:(id | comentario | data_da_entrega | valor | pedido_id)
  * "users" with the following fields:(username | password | enabled)
 
-![image](https://user-images.githubusercontent.com/61911750/147610586-2b52849e-d804-4e0c-be0d-b59c78068f94.png)
+![image](https://user-images.githubusercontent.com/61911750/147610586-2b52849e-d804-4e0c-be0d-b59c78068f94.png=250x250)
